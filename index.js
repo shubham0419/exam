@@ -24,6 +24,10 @@ const emojiSchema = new mongoose.Schema({
 
 const Emoji = mongoose.model("Emoji",emojiSchema);
 
+app.get("/",(req,res)=>{
+  res.send("Hello Student");
+})
+
 app.get("/emoji/",async (req, res) => {
   const emojis = await Emoji.find({});
   res.json(emojis);
