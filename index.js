@@ -7,7 +7,9 @@ require("dotenv").config();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors({
+  origin: "*", // Allows all origins
+}));
 
 mongoose.connect(process.env.DATABASE_URL || "mongodb+srv://shubham:shubham@endtermexam.cfs9b.mongodb.net/?retryWrites=true&w=majority&appName=endtermexam").then(()=>{
   console.log("Connected to MongoDB");
@@ -28,7 +30,7 @@ app.get("/",(req,res)=>{
   res.send("Hello Student");
 })
 
-app.get("/emoji/",async (req, res) => {
+app.get("/emoji",async (req, res) => {
   const emojis = await Emoji.find({});
   res.json(emojis);
 });
