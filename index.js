@@ -14,7 +14,6 @@ app.use(cors({
 mongoose.connect("mongodb+srv://shubham:shubham@endtermexam.cfs9b.mongodb.net/").then(()=>{
   console.log("Connected to MongoDB");
 }).catch(()=>{
-  console.log(process.env.DATABASE_URL)
   console.log("Failed to connect to MongoDB");
 })
 
