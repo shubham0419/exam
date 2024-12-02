@@ -13,8 +13,8 @@ app.use(cors({
 
 mongoose.connect("mongodb+srv://shubham:shubham@endtermexam.cfs9b.mongodb.net/").then(()=>{
   console.log("Connected to MongoDB");
-}).catch(()=>{
-  console.log("Failed to connect to MongoDB");
+}).catch((error)=>{
+  console.log("Failed to connect to MongoDB",error);
 })
 
 const emojiSchema = new mongoose.Schema({
