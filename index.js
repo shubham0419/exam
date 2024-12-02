@@ -30,7 +30,7 @@ app.get("/",(req,res)=>{
   res.send("Hello Student");
 })
 
-app.get("/emojis",async (req, res) => {
+app.get("/emoji",async (req, res) => {
   const emojis = await Emoji.find({});
   res.json(emojis);
 });
