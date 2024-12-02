@@ -11,7 +11,7 @@ app.use(cors({
   origin: "*", // Allows all origins
 }));
 
-mongoose.connect("mongodb+srv://shubham:shubham@endtermexam.cfs9b.mongodb.net/?retryWrites=true&w=majority&appName=endtermexam").then(()=>{
+mongoose.connect("mongodb+srv://shubham:shubham@endtermexam.cfs9b.mongodb.net/").then(()=>{
   console.log("Connected to MongoDB");
 }).catch(()=>{
   console.log(process.env.DATABASE_URL)
